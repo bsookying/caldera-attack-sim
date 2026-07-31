@@ -1,0 +1,29 @@
+{
+  "_comment": "POST to http://[CALDERA_IP]:8888/api/v2/adversaries — Operation Silent Fog (APT29 trimmed, 22 abilities)",
+  "name": "Operation Silent Fog - APT29",
+  "description": "Low-and-slow nation-state espionage modelled on APT29. Spearphish on workstation, quiet recon, credential harvest, lateral movement to DC, NTDS exfil, full cleanup.",
+  "atomic_ordering": [
+    "c0177717b47f2cd07949186523fa3c6b",
+    "34952e2eefd3066c5f574744e1734ca6",
+    "06889e6e9834c7437235d17396c09336",
+    "fbde845d-6c6c-4a46-9501-be18c3425e43",
+    "ba0b398d-91b8-490a-bed2-f959afa8e1aa",
+    "9ce5bf9f-44ec-44c4-bbe0-6d68a83e1b76",
+    "2afae782-6d0a-4fbd-a6b6-d1ce90090eac",
+    "c6f643adfd3ed9cf2806bfcb297e0eee",
+    "ab4dc7789a2374e8fc298302e215ab52",
+    "0c328b7ec82e0074cbb0745db3a53602",
+    "b267badd4e6f3601450582cb07d9f333",
+    "473e5707-5786-4f53-934f-22175c1059b0",
+    "bb0df721f4a4defa743efe9e61837c44",
+    "65048ec1-f7ca-49d3-9410-10813e472b30",
+    "620b674a-7655-436c-b645-bc3e8ea51abd",
+    "c6bf167afe0b85a1e88127fc0d093e4d",
+    "548f5aa3ec2fcfc6872ee10975480f29",
+    "10fad81e-3f68-47be-83b6-fbee7711c6a9",
+    "160a1e0f-0f9b-49bb-a0fe-7e362b51737f",
+    "72784d12700b219ec134aa42cec5603e",
+    "fcf71ee3-d1a9-4136-b919-9e5f6da43608",
+    "48168a8ea0a186532b156fca59756a64"
+  ]
+}
