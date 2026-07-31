@@ -64,6 +64,32 @@ POST /api/v2/facts
 }
 ```
 
+## Known Limitation — Inline Facts via API (Caldera 5.3)
+
+`POST /api/v2/sources` with a `facts` array returns **500 Internal Server Error** regardless of payload format. This is a confirmed bug in Caldera 5.3 when running inside a containerd overlay filesystem.
+
+**Workaround:** Create sources as YAML files and write them directly into the container:
+
+```bash
+# Find the Caldera PID
+CALDERA_PID=$(pgrep -f "server.py" | head -1)
+
+# Write YAML file into container
+sudo tee /proc/$CALDERA_PID/root/usr/src/app/data/sources/my_source.yml > /dev/null << 'EOF'
+id: <uuid>
+name: My Source
+facts:
+  - trait: remote.host.ip
+    value: 192.168.3.31
+    score: 1
+EOF
+
+# Restart Caldera to load the new file
+sudo kill $CALDERA_PID   # auto-restarts
+```
+
+The three lab fact sources are pre-built in `setup/` (YAML files `01_` through `03_`).
+
 ## Key Source IDs
 
 | ID | Name |
