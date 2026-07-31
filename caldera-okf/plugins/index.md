@@ -1,6 +1,6 @@
 # Plugins
 
-Active plugins in this Caldera 5.3.0 instance:
+Active plugins in this Caldera 5.3.0 instance (both caldera-1 and caldera-2):
 
 * [sandcat](sandcat.md) - Default Go-based cross-platform RAT/implant
 * [stockpile](stockpile.md) - Core ability library and scenario adversaries
@@ -13,5 +13,11 @@ Active plugins in this Caldera 5.3.0 instance:
 * [access](access.md) - Initial access modules
 * [training](training.md) - Caldera SME certification course
 * [fieldmanual](fieldmanual.md) - In-app documentation
+* [human](human.md) - Simulated user activity (Chrome/OS) to disguise red-team traffic
+* [gameboard](gameboard.md) - Red vs. blue exercise monitoring dashboard
 
-**Inactive:** `gameboard`, `human`, `ssl`
+**Inactive:** `ssl`
+
+## Installing Additional Plugins
+
+See [Plugin Installation](plugin_installation.md) for the correct procedure — the Docker setup has non-obvious config persistence behavior that requires a specific steps to make changes survive restarts.
