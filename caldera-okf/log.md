@@ -1,6 +1,11 @@
 # Caldera Bundle Update Log
 
 ## 2026-07-31
+* **Caldera SSH**: Created three fact sources via YAML files written directly into the container overlay filesystem (Caldera runs in a containerd overlay, API POST with inline facts returns 500 — known limitation). Sources reachable via API after restart.
+  - Silent Fog - Lab Targets: a1b2c3d4-0001-0001-0001-000000000001
+  - Crimson Tide - Lab Targets: a1b2c3d4-0002-0002-0002-000000000002
+  - Dark Pivot - Dev Segment: a1b2c3d4-0003-0003-0003-000000000003
+* **All operations**: Source IDs updated in operation launch JSON configs.
 * **Caldera API**: Created custom adversary "Operation Silent Fog - APT29" (b63f9720-9203-40fc-9d40-1f8fd58167cd) — 22-ability trimmed profile replacing the bloated built-in APT29 (76 abilities).
 * **Caldera API**: Updated "Operation Dark Pivot" adversary — replaced email collection ability (b1dcc53a) with Chrome (9bc50b2e) + Edge (27a2c04f) browser history abilities at position 25. Both included for test comparison.
 * **op1_silent_fog.md**: Updated adversary ID to custom Silent Fog profile (b63f9720).
