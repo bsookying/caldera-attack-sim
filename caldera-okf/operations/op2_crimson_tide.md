@@ -209,7 +209,7 @@ POST /api/v2/operations
   "adversary": {"adversary_id": "a17c9651-4ebb-4883-b67b-d5854eb512c1"},
   "group": "red",
   "planner": {"id": "788107d5-dc1e-4204-9269-38df0186d3e7"},
-  "source": {"id": "<crimson-tide-source-id>"},
+  "source": {"id": "a1b2c3d4-0002-0002-0002-000000000002"},
   "obfuscator": "plain-text",
   "jitter": "1/3",
   "autonomous": 1,
