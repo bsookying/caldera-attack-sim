@@ -1,0 +1,30 @@
+{
+  "_comment": "POST to http://[CALDERA_IP]:8888/api/v2/adversaries — Operation Crimson Tide (Ransomware, 23 abilities)",
+  "name": "Operation Crimson Tide - Ransomware",
+  "description": "Fast-moving ransomware campaign: disable defenses, spread via SMB, stage for double extortion, encrypt domain-wide. Modelled on Wizard Spider / LockBit TTPs.",
+  "atomic_ordering": [
+    "c0177717b47f2cd07949186523fa3c6b",
+    "34952e2eefd3066c5f574744e1734ca6",
+    "280003641a5cddf916c4f2bf605a71d3",
+    "3864fd22-5c63-41c9-bdbc-a66b5ffa3f5e",
+    "c6f643adfd3ed9cf2806bfcb297e0eee",
+    "ab4dc7789a2374e8fc298302e215ab52",
+    "706ae72d8994c4570a023189788a567e",
+    "ba0b398d-91b8-490a-bed2-f959afa8e1aa",
+    "bb0df721f4a4defa743efe9e61837c44",
+    "780cde60c956ccbff24c43ff7b7e70ea",
+    "b267badd4e6f3601450582cb07d9f333",
+    "473e5707-5786-4f53-934f-22175c1059b0",
+    "65048ec1-f7ca-49d3-9410-10813e472b30",
+    "620b674a-7655-436c-b645-bc3e8ea51abd",
+    "c6bf167afe0b85a1e88127fc0d093e4d",
+    "381ee532-e000-4c1e-9073-903cb1ed1778",
+    "fc231955-774f-442c-ac0e-e74dfda50c5c",
+    "160a1e0f-0f9b-49bb-a0fe-7e362b51737f",
+    "72784d12700b219ec134aa42cec5603e",
+    "c8f329d2847ede593b6cb4a1ec6120fb",
+    "2bfd70f3-d5ce-4a11-a730-62b9e4015ac3",
+    "73aaa846b42d1d97175d21e914725f31",
+    "f7e779369b3f0cff24152d7dd94eca98"
+  ]
+}
