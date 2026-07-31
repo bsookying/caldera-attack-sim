@@ -1,0 +1,12 @@
+{
+  "_comment": "POST to http://[CALDERA_IP]:8888/api/v2/sources",
+  "name": "Crimson Tide - Lab Targets",
+  "facts": [
+    {"trait": "remote.host.ip", "value": "192.168.3.32", "score": 1},
+    {"trait": "remote.host.ip", "value": "192.168.1.31", "score": 1},
+    {"trait": "domain.user.name", "value": "lab-user", "score": 1},
+    {"trait": "domain.user.password", "value": "Paloalto1!", "score": 1},
+    {"trait": "domain.user.name", "value": "administrator", "score": 1},
+    {"trait": "domain.user.password", "value": "Paloalto1!", "score": 1}
+  ]
+}
