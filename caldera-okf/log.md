@@ -1,6 +1,8 @@
 # Caldera Bundle Update Log
 
 ## 2026-07-31
+* **GitHub**: Repo published at https://github.com/bsookying/caldera-attack-sim. Contains full bundle, setup/ folder (adversary JSON + fact source YAML), CLAUDE.md, README.md, and colleague-setup-prompt.md.
+* **colleague-setup-prompt.md**: Added to bundle root — 7-step paste-and-go prompt for colleague to configure a fresh Caldera instance via Claude Code.
 * **Caldera SSH**: Created three fact sources via YAML files written directly into the container overlay filesystem (Caldera runs in a containerd overlay, API POST with inline facts returns 500 — known limitation). Sources reachable via API after restart.
   - Silent Fog - Lab Targets: a1b2c3d4-0001-0001-0001-000000000001
   - Crimson Tide - Lab Targets: a1b2c3d4-0002-0002-0002-000000000002
