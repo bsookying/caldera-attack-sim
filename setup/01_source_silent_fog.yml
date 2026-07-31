@@ -1,0 +1,21 @@
+id: a1b2c3d4-0001-0001-0001-000000000001
+name: Silent Fog - Lab Targets
+facts:
+  - trait: remote.host.ip
+    value: 192.168.3.31
+    score: 1
+  - trait: remote.host.ip
+    value: 192.168.1.31
+    score: 1
+  - trait: domain.user.name
+    value: lab-user
+    score: 1
+  - trait: domain.user.password
+    value: Paloalto1!
+    score: 1
+  - trait: domain.user.name
+    value: administrator
+    score: 1
+  - trait: domain.user.password
+    value: Paloalto1!
+    score: 1
