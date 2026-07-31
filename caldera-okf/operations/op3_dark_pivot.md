@@ -234,7 +234,7 @@ POST /api/v2/operations
   "adversary": {"adversary_id": "003e3455-d435-4353-be68-b5989a2fb371"},
   "group": "red",
   "planner": {"id": "aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a"},
-  "source": {"id": "<dark-pivot-source-id>"},
+  "source": {"id": "a1b2c3d4-0003-0003-0003-000000000003"},
   "obfuscator": "steganography",
   "jitter": "10/30",
   "autonomous": 1,
