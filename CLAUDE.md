@@ -6,13 +6,31 @@ This repo contains the full knowledge bundle and setup scripts for a Caldera 5.3
 
 You can configure a fresh Caldera instance automatically. Use this prompt:
 
-> "Set up this Caldera lab using the setup/ folder in this repo. Caldera is at [YOUR_IP]:8888, credentials are admin/admin."
+> "Download the repo at https://github.com/bsookying/caldera-attack-sim to C:\Users\lab-user\caldera-attack-sim using PowerShell (no git required — download as zip and extract). Then read the CLAUDE.md and set up Caldera at 192.168.8.121:8888 — create all three adversary profiles via the REST API, then create the three fact sources by writing the YAML files from setup/ directly into the Caldera container via SSH using the key at C:\Users\lab-user\.ssh\id_rsa, then restart the Caldera process. Verify everything loaded and report any missing ability IDs."
 
 Claude will:
-1. Authenticate to the Caldera API
-2. Create all three adversary profiles with the correct ability ordering
-3. Create all three fact sources seeded with lab target IPs and credentials
-4. Verify all ability IDs exist in the instance and report any missing
+1. Download and extract the repo locally
+2. Authenticate to the Caldera REST API (admin/admin)
+3. Create all three adversary profiles via API
+4. Verify all ability IDs exist and report any missing
+5. Write the three fact source YAML files into the Caldera container via SSH
+6. Restart the Caldera process so sources load
+7. Verify all three fact sources appear in the API
+
+## Important: How Fact Sources Are Created
+
+Caldera runs inside a **containerd overlay filesystem** on this lab. The REST API (`POST /api/v2/sources`) returns 500 when inline facts are provided — this is a known Caldera 5.3 limitation. Fact sources must be created by writing YAML files directly into the container and restarting the process.
+
+**SSH access:** `lab-user@192.168.8.121` using key at `~/.ssh/id_rsa`
+
+**Container data path:** Find the Caldera PID with `pgrep -f server.py`, then write to:
+```
+/proc/[PID]/root/usr/src/app/data/sources/
+```
+
+**Restart Caldera:** Kill the process — it auto-restarts via the container runtime.
+
+**YAML source files** are in `setup/` — files prefixed `0*_source_*.yml`.
 
 ## Lab Topology
 
@@ -48,11 +66,11 @@ C2 assignment is deliberate: agents must beacon across segment boundaries so att
 
 ## Adversary IDs (caldera-1)
 
-| Operation | Adversary ID |
-|---|---|
-| Silent Fog | b63f9720-9203-40fc-9d40-1f8fd58167cd |
-| Crimson Tide | a17c9651-4ebb-4883-b67b-d5854eb512c1 |
-| Dark Pivot | 003e3455-d435-4353-be68-b5989a2fb371 |
+| Operation | Adversary ID | Fact Source ID |
+|---|---|---|
+| Silent Fog | b63f9720-9203-40fc-9d40-1f8fd58167cd | a1b2c3d4-0001-0001-0001-000000000001 |
+| Crimson Tide | a17c9651-4ebb-4883-b67b-d5854eb512c1 | a1b2c3d4-0002-0002-0002-000000000002 |
+| Dark Pivot | 003e3455-d435-4353-be68-b5989a2fb371 | a1b2c3d4-0003-0003-0003-000000000003 |
 
 ## Pre-Operation Checklist
 
@@ -69,5 +87,6 @@ Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 ## Repo Structure
 
 - `CLAUDE.md` — this file; loaded automatically by Claude Code
+- `colleague-setup-prompt.md` — copy-paste prompt to configure a fresh Caldera instance
 - `caldera-okf/` — full knowledge bundle (concepts, API reference, plugins, adversary profiles, operation designs, video prompts)
-- `setup/` — API payloads to configure a fresh Caldera instance
+- `setup/` — adversary JSON payloads (API) and fact source YAML files (SSH)
