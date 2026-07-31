@@ -178,7 +178,7 @@ POST /api/v2/operations
   "adversary": {"adversary_id": "b63f9720-9203-40fc-9d40-1f8fd58167cd"},
   "group": "red",
   "planner": {"id": "aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a"},
-  "source": {"id": "152ca62e-32b6-5c2a-84e8-89fedd44d621"},
+  "source": {"id": "a1b2c3d4-0001-0001-0001-000000000001"},
   "obfuscator": "base64jumble",
   "jitter": "5/20",
   "autonomous": 1,
